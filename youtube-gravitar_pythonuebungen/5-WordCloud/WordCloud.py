@@ -1,5 +1,15 @@
-import wordcloud
-import matplotlib.pyplot as plt
 import os  # MS-Struktur laden
 # Wechsle ins Unterverzeichniss
 os.chdir("youtube-gravitar_pythonuebungen\\4-WordCloud")
+
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+with open("Teil_05_Alice_in_wonderland.txt") as f:
+    text = f.read()
+
+wordcloud = WordCloud(width=1920, height=1200)
+
+wordcloud.generate(text)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.show()
