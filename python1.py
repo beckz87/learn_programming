@@ -1,1 +1,2 @@
-#blsbls
+hi = "Test Text"
+print(hi)
