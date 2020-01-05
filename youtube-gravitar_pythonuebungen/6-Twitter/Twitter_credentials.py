@@ -1,0 +1,2 @@
+ConsumerKey = 'XXXXXXXXXXXXXXX'
+ConsumerSecret = 'XXXXXXXCCCXXXX'
