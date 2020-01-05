@@ -10,16 +10,22 @@ with open("pi_as_hell.txt", "r") as f:
 # print(pi[-10:])  # zeigt die letzten 10 zeichen
 # print(len(pi))  # zählt alle zeichen
 
-# Turtle steuern
-
-lines = 100
-
-tu.mode('logo')
+# TURTLE CONTROLING
+lines = 100_000
+tu.mode('logo')  # Turtle ausrichten sodass 0° oben ist
+tu.tracer(False)  # False=speeed True=slow
+tu.screensize(3000, 3000, 'black')
+tu.colormode(255)
 
 for n in range(lines):
+    color = int(n/(lines/255))
+    tu.pencolor(255, 255-color, color)
     zahl = int(pi[n])
     rotation = zahl * 36
     tu.setheading(rotation)
-    tu.forward(50)
+    tu.forward(5)
+    if n % 10_000 == 0: #Läd 10_000 Lines nach und nach und nicht alles aufeinmal
+        tu.update()
 
+tu.getcanvas().postscript(file='PI_Picture.ps')
 tu.done()
