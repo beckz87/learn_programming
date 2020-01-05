@@ -14,7 +14,7 @@ with open("pi_as_hell.txt", "r") as f:
 lines = 100_000
 tu.mode('logo')  # Turtle ausrichten sodass 0° oben ist
 tu.tracer(False)  # False=speeed True=slow
-tu.screensize(3000, 3000, 'black')
+tu.screensize(5000, 5000, 'black')
 tu.colormode(255)
 
 for n in range(lines):
